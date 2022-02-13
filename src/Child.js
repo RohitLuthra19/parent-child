@@ -10,6 +10,7 @@ export default function Child({ childMoney, receivedMoney }) {
     const remainingMoney = childMoney - iphoneMoney;
     receivedMoney(remainingMoney);
   }
+
   function disableButton() {
     if (!iphoneMoney || !childMoney || childMoney < iphoneMoney) {
       return true;
