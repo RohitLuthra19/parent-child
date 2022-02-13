@@ -10,7 +10,6 @@ export default function Parent() {
     setChildMoney(event.target.value);
   }
   function updatedReceivedMoney(gotMoney) {
-    console.log(gotMoney);
     setGotMoney(gotMoney);
   }
   return (

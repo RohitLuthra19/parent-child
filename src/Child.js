@@ -10,12 +10,21 @@ export default function Child({ childMoney, receivedMoney }) {
     const remainingMoney = childMoney - iphoneMoney;
     receivedMoney(remainingMoney);
   }
+  function disableButton() {
+    if (!iphoneMoney || !childMoney || childMoney < iphoneMoney) {
+      return true;
+    }
+    return false;
+  }
+
   return (
     <>
       <h1>Child Component </h1>
       <h2>Received Money: {childMoney}</h2>
       <input value={iphoneMoney} onChange={handleChange} />
-      <button onClick={handleClick}>Send Remaining Money </button>
+      <button onClick={handleClick} disabled={disableButton()}>
+        Send Remaining Money{' '}
+      </button>
     </>
   );
 }
